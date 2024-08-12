@@ -30,7 +30,7 @@ const useBids = () => {
     const queryOptions: UseQueryOptions<IBid, Error> = {
         queryKey: ["item", bidId],
         queryFn: () => fetchBid(bidId!),
-        // enabled: !!isSearch,
+        enabled: !!bidId,
     };
     const { data: bid, error: bidError, isLoading: bidLoading, isFetching, refetch } = useQuery<IBid, Error>(queryOptions);
     const handleSearch = async () => {
